@@ -1,0 +1,23 @@
+.dif {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.8s ease-out;
+}
+
+.dif.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.card {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.8s ease-out;
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
