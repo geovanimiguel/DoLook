@@ -1,0 +1,20 @@
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+
+  .menu {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .menu-indicator {
+    display: none;
+  }
+
+  .menu a.active {
+    color: #d4af37;
+    background: rgba(212,175,55,0.08);
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+
+}

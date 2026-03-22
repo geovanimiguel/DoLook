@@ -46,19 +46,47 @@
 
   <!-- Section -->
 <main>
-  
-    <section class="hero">
-      <div class="hero-content">
-        <h2>Seu estilo começa aqui <span>✂</span></h2>
-        <p>Cortes modernos, barba alinhada e pintura. Aqui o visual é levado a sério.</p>
-        <a href="https://wa.me/244930793980?text=Olá! Gostaria de agendar um corte na Barbearia Do Look."
-        class="btn"
-        target="_blank">Agendar agora</a>
-  
-      </div>
-    </section>
-  
-    <section class="services">
+
+    <section class="hero" id="home">
+  <!-- VIDEO BACKGROUND -->
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+  <source src="videos/vdeo_2.mp4" type="video/mp4">
+
+  </video>
+
+  <!-- OVERLAY ESCURO -->
+  <div class="hero-overlay"></div>
+
+  <!-- CONTEÚDO -->
+  <div class="hero-content">
+
+    <h2 class="hero-title">
+      Seu estilo começa aqui ✂
+    </h2>
+
+    <p class="hero-text">
+      Precisão. Estilo. Respeito pelo teu visual.
+    </p>
+
+    <a href="https://wa.me/244930793980"
+       class="hero-btn"
+       target="_blank">
+
+       Agendar agora
+
+    </a>
+  </div>
+</section>
+    <section class="services" id="services">
+      <div class="section-bg-icons">
+
+    <i class="fa-solid fa-scissors"></i>
+    <i class="fa-solid fa-razor"></i>
+    <i class="fa-solid fa-comb"></i>
+    <i class="fa-solid fa-spray-can"></i>
+    <i class="fa-solid fa-user"></i>
+
+  </div>
       <h3>Nossos Serviços</h3>
       <div class="cards">
         <div class="card">
@@ -69,6 +97,7 @@
           <h4>Barba</h4>
           <p>Alinhamento, hidratação e acabamento profissional.</p>
         </div>
+    
         <div class="card">
           <h4>Pintura</h4>
           <p>Pintura de diversas cores.</p>
@@ -82,7 +111,7 @@
   
       <!-- Sobre -->
   
-    <section class="about">
+    <section class="about" id="about">
       <div>
         <h3>Sobre a Barbearia</h3>
         <p class="text">Somos uma barbearia local focada em elevar a autoestima masculina. Atendimento humanizado, ambiente confortável e profissionais qualificados.</p>
@@ -217,7 +246,7 @@
       </section>
 
      <!-- Call To Action -->
-    <section class="cta">
+    <section class="cta" id="contact">
       <h3>Pronto pra mudar o visual?</h3>
       <a href="https://wa.me/+244930793980?text=Olá, gostaria de fazer parte da vossa comunidade." class="btn">Agendar agora</a>
     </section>

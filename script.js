@@ -117,3 +117,96 @@ faqItems.forEach(item => {
     }
   });
 });
+
+// ===== CONFIG =====
+const menu = document.querySelector('.menu');
+const menuLinks = document.querySelectorAll('.menu a');
+const sections = document.querySelectorAll('section[id]');
+
+// ===== CRIAR INDICADOR DINAMICAMENTE =====
+const indicator = document.createElement('div');
+indicator.classList.add('menu-indicator');
+menu.appendChild(indicator);
+
+// ===== MOVER INDICADOR =====
+function moveIndicator(link) {
+
+  // desativa no mobile
+  if (window.innerWidth <= 768) return;
+
+  const rect = link.getBoundingClientRect();
+  const parentRect = menu.getBoundingClientRect();
+
+  indicator.style.width = rect.width + "px";
+  indicator.style.left = (rect.left - parentRect.left) + "px";
+}
+
+// ===== ATUALIZAR LINK ATIVO =====
+function setActiveLink() {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+
+    if (window.scrollY >= sectionTop - 150) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  menuLinks.forEach(link => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+      moveIndicator(link);
+    }
+  });
+}
+
+// ===== SCROLL SUAVE =====
+menuLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const target = document.querySelector(this.getAttribute('href'));
+
+    if (!target) return;
+
+    const headerHeight = document.getElementById('header').offsetHeight;
+
+    window.scrollTo({
+      top: target.offsetTop - headerHeight,
+      behavior: 'smooth'
+    });
+
+    menuLinks.forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+
+    moveIndicator(this);
+  });
+});
+
+// ===== EVENTOS =====
+window.addEventListener('scroll', setActiveLink);
+
+window.addEventListener('load', () => {
+  setActiveLink();
+
+  const active = document.querySelector('.menu a.active');
+  if (active) moveIndicator(active);
+});
+
+// ===== AJUSTAR AO REDIMENSIONAR =====
+window.addEventListener('resize', () => {
+  const active = document.querySelector('.menu a.active');
+  if (active) moveIndicator(active);
+});
+
+window.addEventListener("resize", () => {
+
+  const active = document.querySelector(".menu a.active");
+
+  if (active) moveIndicator(active);
+
+});
